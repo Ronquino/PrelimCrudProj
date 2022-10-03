@@ -1,7 +1,7 @@
 <div>
     <div class="card">
         <div class="card-header bg-muted">
-            <h3>Add Sports</h3>
+            <h3>Sports Leagues</h3>
         </div>
         <div class="card-body">
             <div class="form-floating mb-3" wire:model.defer="name">

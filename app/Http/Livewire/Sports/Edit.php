@@ -3,7 +3,7 @@
 namespace App\Http\Livewire\Sports;
 use App\Models\Sports;
 use Livewire\Component;
-
+use App\Events\UserLog;
 class Edit extends Component
 {
 
@@ -34,6 +34,9 @@ class Edit extends Component
             'gender'                =>        $this->gender,
             'sports_name'           =>        $this->sports_name
         ]);
+
+        $log_entry = 'Update sports "' . $this->sports->name . '"with the ID# ' . $this->sports->id;
+        event(new UserLog($log_entry));
 
         return redirect('/sports')->with('message', 'Updated Successfully');
     }

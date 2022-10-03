@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\SportsController;
+use App\Http\Controllers\SiteController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,4 +34,5 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/sports', [SportsController::class, 'index']);
     Route::get('/edit/{sports}', [SportsController::class, 'edit']);
     Route::get('/delete/{sports}', [SportsController::class, 'destroy']);
+    Route::get('/logs', [SiteController::class, 'logs']);
 });
