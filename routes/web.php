@@ -23,16 +23,20 @@ Route::post('/register', [AuthController::class, 'register']);
 Route::get('/verification/{user}/{token}', [AuthController::class, 'verification']);
 Route::get('logout', [AuthController::class, 'logout']);
 
-
+// Auth::routes(['verify' => true]);
 
 // grouping the middleware
 
-Route::group(['middleware' => 'auth'], function () {
+Route::middleware(['auth', 'role:admin|user'])->group(function(){
     Route::get('/dashboard', function() {
         return view('/dashboard');
     });
-    Route::get('/sports', [SportsController::class, 'index']);
-    Route::get('/edit/{sports}', [SportsController::class, 'edit']);
+    Route::get('/books', [SportsController::class, 'index']);
     Route::get('/delete/{sports}', [SportsController::class, 'destroy']);
+    
+});
+Route::middleware(['auth', 'role:admin'])->group(function(){
+    Route::get('/edit/{sports}', [SportsController::class, 'edit']);
+  
     Route::get('/logs', [SiteController::class, 'logs']);
 });

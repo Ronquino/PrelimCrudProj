@@ -11,11 +11,11 @@
             <div class="col">
             <select class="form-select"  wire:model.lazy="sports_name">
                     <option value="all">All</option>
-                    <option value="Basketball">Basketball</option>
-                    <option value="Volleyball">Volleyball</option>
-                    <option value="Tennis">Tennis</option>
-                    <option value="Swimming">Swimming</option>
-                    <option value="Chess">Chess</option>
+                    <option value="Basketball">Netflix Book</option>
+                    <option value="Volleyball">Novel</option>
+                    <option value="Tennis">School Book</option>
+                    <option value="Swimming">Bible</option>
+                    <option value="Chess">Drawing Book</option>
                  </select>
             </div>
             <div class="col">
@@ -27,11 +27,11 @@
         <thead class="bg-secondary">
             <tr>
                 <th>ID No</th>
-                <th>Full Name</th>
+                <th>Book Title</th>
+                <th>Name</th>
                 <th>Contact Number</th>
-                <th>Address</th>
                 <th>Gender</th>
-                <th>Sports</th>
+                <th>Book Type</th>
                 <th></th>
                 <th></th>
             </tr>
@@ -39,17 +39,17 @@
         <tbody>
             @foreach($sports as $sport)
                 <tr>
-                    <td>{{$sport->id}}</td>
-                    <td>{{$sport->name}}</td>
-                    <td>{{$sport->contact_number}}</td>
-                    <td>{{$sport->address}}</td>
-                    <td>{{$sport->gender}}</td>
-                    <td>{{$sport->sports_name}}</td>
+                    <td class="text-white">{{$sport->id}}</td>
+                    <td class="text-white">{{$sport->name}}</td>
+                    <td class="text-white">{{$sport->address}}</td>
+                    <td class="text-white">{{$sport->contact_number}}</td>
+                    <td class="text-white">{{$sport->gender}}</td>
+                    <td class="text-white">{{$sport->sports_name}}</td>
                     <td>
-                        <a href="{{url('edit', ['sport' => $sport->id])}}" class="btn btn-outline-success">Edit</a>
+                        <a href="{{url('edit', ['sport' => $sport->id])}}" class="btn btn-success">Edit</a>
                     </td>
                     <td>
-                        <a href="{{url('delete', ['sport' => $sport->id])}}" class="btn btn-outline-danger">Delete</a>
+                        <a href="{{url('delete', ['sport' => $sport->id])}}" class="btn btn-danger">Delete</a>
                     </td>
                 </tr>
             @endforeach

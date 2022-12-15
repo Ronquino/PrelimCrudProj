@@ -30,7 +30,7 @@ class Create extends Component
         $log_entry = 'Added a sports "' . $sports->sports_name . '" with the ID# of ' . $sports->id;
         event(new UserLog($log_entry));
 
-        return redirect('/sports')->with('message', 'Added Successfully');
+        return redirect('/books')->with('message', 'Added Successfully');
     }
 
 

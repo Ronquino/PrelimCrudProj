@@ -1,19 +1,19 @@
 <div>
     <div class="card">
         <div class="card-header bg-muted">
-            <h3>Sports Leagues</h3>
+            <h3>Books</h3>
         </div>
         <div class="card-body">
             <div class="form-floating mb-3" wire:model.defer="name">
                 <input type="text" class="form-control">
-                <label for="name">Name</label>
+                <label for="name">Book Title</label>
             </div>
             @error("name")
             <p class="text-danger">{{$message}}</p>
             @enderror
             <div class="form-floating mb-3" wire:model.defer="address">
                 <input type="text" class="form-control">
-                <label for="address">Address</label>
+                <label for="address">Name</label>
             </div>
             @error("address")
             <p class="text-danger">{{$message}}</p>
@@ -39,24 +39,44 @@
             @enderror
             <div class="form-floating mb-3">
                 <select name="sports_name" class="form-select" wire:model.defer="sports_name">
-                    <option hidden="true">Select Sports Name</option>
-                    <option selected disabled>Select Sports Name</option>
-                    <option value="Basketball">Basketball</option>
-                    <option value="Volleyball">Volleyball</option>
-                    <option value="Tennis">Tennis</option>
-                    <option value="Swimming">Swimming</option>
-                    <option value="Chess">Chess</option>
+                    <option hidden="true">Select Book Type</option>
+                    <option selected disabled>Select Book Type</option>
+                    <option value="Netflix Book">Netflix Book</option>
+                    <option value="Novel">Novel</option>
+                    <option value="School Book">School Book</option>
+                    <option value="Bible">Bible</option>
+                    <option value="Drawing Book">Drawing Book</option>
                 </select>
-                <label for="sports_name">Sports</label>
+                <label for="sports_name">Book Type</label>
             </div>
             @error("sports")
             <p class="text-danger">{{$message}}</p>
             @enderror
             <div class="form-group mb-3 d-grid gap-2 d-md-flex justify-content-end">
-                <button class="btn btn-outline-primary" type="submit" wire:click="addSports()">
-                    Add Sports
+                <button class="btn btn-primary" type="submit" wire:click="addSports()">
+                    Add
                 </button>
             </div>
         </div>
     </div>
 </div>
+<style>
+    #basic-addon1 {
+    width: 40px;
+    text-align: center;
+    background-color: primary;
+}
+body{
+    background-image: url("images/library.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+}
+.card{
+    background-image: url("images/book1.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 98%;
+}
+</style>

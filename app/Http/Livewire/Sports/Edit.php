@@ -38,11 +38,11 @@ class Edit extends Component
         $log_entry = 'Update sports "' . $this->sports->name . '"with the ID# ' . $this->sports->id;
         event(new UserLog($log_entry));
 
-        return redirect('/sports')->with('message', 'Updated Successfully');
+        return redirect('/books')->with('message', 'Updated Successfully');
     }
 
     public function back() {
-        return redirect('/sports');
+        return redirect('/books');
     }
     public function getSportsProperty() {
         return Sports::find($this->sportsId);

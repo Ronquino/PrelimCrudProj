@@ -21,11 +21,11 @@ class Delete extends Component
         event(new UserLog($log_entry));
 
 
-        return redirect('/sports')->with('message', 'Deleted Successfully');
+        return redirect('/books')->with('message', 'Deleted Successfully');
     }
 
     public function back() {
-        return redirect('/sports');
+        return redirect('/books');
     }
     public function render()
     {
